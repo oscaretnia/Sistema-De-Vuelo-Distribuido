@@ -5,9 +5,13 @@
  */
 package pais1.cliente;
 
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import pais1.servidor.Avion;
 import pais1.servidor.SistemaVuelo;
 
 /**
@@ -34,7 +38,7 @@ public class Vista {
         return opcion;
     }
     
-    private static String componerMenu() {
+    private String componerMenu() {
         
         StringBuilder builder = new StringBuilder();
         
@@ -53,7 +57,7 @@ public class Vista {
             Registry registro = LocateRegistry.getRegistry("localhost", 4444);
             sisVuelo1 = (SistemaVuelo) registro.lookup("sistemaPais1");            
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.getLogger(Vista.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
@@ -63,7 +67,7 @@ public class Vista {
             switch(opcion) {
                 //Opcion 1
                 case 1: 
-                    
+                    this.mostrarAvionesLocales();            
                 break;
                 //Fin opcion 1
                 
@@ -103,6 +107,24 @@ public class Vista {
         do{
             ejecutar(mostrarMenu());
         }while(opcion != 6);
+    }
+    
+    private void mostrarAvionesLocales() {
+        try {
+            
+            for (Avion avion : sisVuelo1.obtenerAVionesLocales() ) {
+                System.out.println("Avion");
+                System.out.println("-------------------");
+                System.out.println("Matricula : " + avion.getMatricula());
+                System.out.println("Origen : " + avion.getOrigen());
+                System.out.println("Destino : " + avion.getDestino());
+                System.out.println("Fecha de vuelo : " + avion.getFechaVuelo());
+            }
+            
+            
+        } catch (RemoteException ex) {
+            Logger.getLogger(Vista.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     
