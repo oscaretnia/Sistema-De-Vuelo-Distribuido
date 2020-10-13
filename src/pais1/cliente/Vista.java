@@ -5,7 +5,10 @@
  */
 package pais1.cliente;
 
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.Scanner;
+import pais1.servidor.SistemaVuelo;
 
 /**
  *
@@ -13,8 +16,14 @@ import java.util.Scanner;
  */
 public class Vista {
     
-    private static int opcion = 0;
-    private static Scanner scanner = new Scanner(System.in);
+    private int opcion = 0;
+    private final Scanner scanner = new Scanner(System.in);
+    private SistemaVuelo sisVuelo1;
+    
+    public Vista() {
+        conectarServidor();
+    }
+    
     
     private int mostrarMenu() {
         
@@ -34,9 +43,67 @@ public class Vista {
                .append("2.- Mostrar aviones extranjeros \n")
                .append("3.- Mostrar rutas activas \n")
                .append("4.- Mostrar rutas disponibles \n")
-               .append("6.- SALIR \n");    
+               .append("5.- SALIR \n");    
         
         return builder.toString();
     }
+    
+    private void conectarServidor() {
+        try {
+            Registry registro = LocateRegistry.getRegistry("localhost", 4444);
+            sisVuelo1 = (SistemaVuelo) registro.lookup("sistemaPais1");            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void ejecutar(int opcion) {
+            
+        
+            switch(opcion) {
+                //Opcion 1
+                case 1: 
+                    
+                break;
+                //Fin opcion 1
+                
+              
+                //Opcion 2
+                case 2:
+                    
+                break;
+                //Fin opcion 2
+                
+
+                //Opcion 3
+                case 3:
+                    
+                    
+                break;
+                //Fin opcion 3
+                
+                
+                //Opcion 4
+                case 4:
+                    
+                    
+                break;
+                //Fin opcion 4
+                
+                
+                //Opcion 5
+                case 5:
+                    System.exit(0);
+                break;
+                //Fin opcion 6
+            }        
+    }
+    
+    public void iniciar() {
+        do{
+            ejecutar(mostrarMenu());
+        }while(opcion != 6);
+    }
+    
     
 }
