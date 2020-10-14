@@ -16,12 +16,10 @@ import java.util.List;
 
 public interface SistemaVuelo extends Remote {
     
-    public List<Avion> obtenerAVionesLocales() throws RemoteException;
+    public List<Aeropuerto> obtenerAeropuertos() throws RemoteException;
     
-    public List<Avion> obtenerAVionesExtranjeros() throws RemoteException;
+    public List<Avion> obtenerAViones() throws RemoteException;
     
-    public List<Ruta> obtenerRutasLocales(String estado) throws RemoteException;
-    
-    public List<Ruta> obtenerRutasExtranjeras(String estado) throws RemoteException;
+    public List<Ruta> obtenerRutas() throws RemoteException;
     
 }

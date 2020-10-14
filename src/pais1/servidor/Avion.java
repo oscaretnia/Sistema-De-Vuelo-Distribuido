@@ -15,6 +15,7 @@ public class Avion implements Serializable {
     
     private static final long serialVersionUID = 1L;
    
+    private final String pais;
     private String origen;
     private String destino;
     private String matricula;
@@ -22,6 +23,7 @@ public class Avion implements Serializable {
     private String fechaVuelo;
 
     public Avion() {
+        this.pais = "Pais 1";
     }
 
     public Avion( String origen, String destino, String matricula, int cantidadPasajeros, String fechaVuelo) {
@@ -30,8 +32,12 @@ public class Avion implements Serializable {
         this.matricula = matricula;
         this.cantidadPasajeros = cantidadPasajeros;
         this.fechaVuelo = fechaVuelo;
+        this.pais = "Pais 1";
     }
-
+    
+    public String getPais() {
+        return origen;
+    }
 
     public String getOrigen() {
         return origen;

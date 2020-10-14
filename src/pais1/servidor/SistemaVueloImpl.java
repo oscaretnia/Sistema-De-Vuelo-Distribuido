@@ -25,25 +25,19 @@ public class SistemaVueloImpl extends UnicastRemoteObject implements SistemaVuel
     }
     
     @Override
-    public List<Avion> obtenerAVionesLocales() throws RemoteException {
+    public List<Aeropuerto> obtenerAeropuertos() throws RemoteException {
+        return null;
+    }
+    
+    @Override
+    public List<Avion> obtenerAViones() throws RemoteException {
         return this.db.obtenerAviones();
     }
 
     @Override
-    public List<Avion> obtenerAVionesExtranjeros() throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Ruta> obtenerRutasLocales(String estado) throws RemoteException {
-        return new ArrayList<>(db.obtenerRutas().stream().filter(ruta -> ruta.getEstado().equalsIgnoreCase(estado)).collect(Collectors.toList()));
-    }
-
-    @Override
-    public List<Ruta> obtenerRutasExtranjeras(String estado) throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    public List<Ruta> obtenerRutas() throws RemoteException {
+        return db.obtenerRutas();
+    }   
     
     
 }

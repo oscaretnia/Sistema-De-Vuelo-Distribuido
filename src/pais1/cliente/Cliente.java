@@ -13,7 +13,7 @@ public class Cliente {
     
     public static void main(String args[]){
         
-        new Vista().iniciar();
+        new Executor().iniciar();
         
     }
     
