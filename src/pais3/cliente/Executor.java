@@ -1,10 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package pais2.cliente;
+package pais3.cliente;
 
+import common.Aeropuerto;
+import common.Avion;
+import common.Ruta;
+import common.SistemaVuelo;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -13,15 +12,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import common.SistemaVuelo;
-import common.Aeropuerto;
-import common.Avion;
-import common.Ruta;
-
-/**
- *
- * @author Sophy
- */
 
 public class Executor {
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pais2.servidor;
+package pais3.servidor;
 
 import common.Ruta;
 import common.Avion;
@@ -39,6 +39,6 @@ public class SistemaVueloImpl extends UnicastRemoteObject implements SistemaVuel
     @Override
     public List<Ruta> obtenerRutas() throws RemoteException {
         return db.obtenerRutas();
-    } 
+    }   
     
 }

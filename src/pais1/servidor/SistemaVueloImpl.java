@@ -40,13 +40,5 @@ public class SistemaVueloImpl extends UnicastRemoteObject implements SistemaVuel
     public List<Ruta> obtenerRutas() throws RemoteException {
         return db.obtenerRutas();
     }   
-
-    @Override
-    public String toString() {
-        return "Sistema 1";
-    }
-    
-    
-    
     
 }

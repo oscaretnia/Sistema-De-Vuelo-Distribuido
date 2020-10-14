@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pais2.cliente;
+package pais5.cliente;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -22,7 +22,6 @@ import common.Ruta;
  *
  * @author Sophy
  */
-
 public class Executor {
     
     private int opcion = 0;
