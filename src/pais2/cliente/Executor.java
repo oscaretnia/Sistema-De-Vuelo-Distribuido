@@ -51,7 +51,7 @@ public class Executor {
         
         StringBuilder builder = new StringBuilder();
         
-        builder.append("**** Sistema Pais 1 ****\n")
+        builder.append("**** Sistema Pais 2 ****\n")
                .append("**** Menú ****\n")
                .append("1.- Mostrar aeropuertos \n")
                .append("2.- Mostrar aviones \n")
