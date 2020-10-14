@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pais1.servidor;
+package pais2.servidor;
 
 import common.Aeropuerto;
 import common.Avion;
@@ -21,7 +21,7 @@ public class Datos {
     private final Aeropuerto aeropuerto;
 
     public Datos() {
-       this.aeropuerto = new Aeropuerto("Pais 1");
+       this.aeropuerto = new Aeropuerto("Pais 2");
        this.setDatos();
     }
 
@@ -35,7 +35,7 @@ public class Datos {
         List<Avion> aviones = new ArrayList<>();
         
         //crear aviones
-        Avion avion1 = new Avion(this.aeropuerto.getPais(), "Pais 1", "Pais 2", "hdh7483", 130, "03-10-2020");
+        Avion avion1 = new Avion(this.aeropuerto.getPais(), "Pais 2", "Pais 3", "yrt7463", 150, "11-02-2020");
         
         //agregar aviones
         
@@ -50,8 +50,8 @@ public class Datos {
         
         //crear rutas
         
-        Ruta ruta1 = new Ruta(this.aeropuerto.getPais(), "Pais 1", "Pais 3", "Activa");
-        Ruta ruta2 = new Ruta(this.aeropuerto.getPais(), "Pais 4", "Pais 1", "Disponible");
+        Ruta ruta1 = new Ruta(this.aeropuerto.getPais(), "Pais 2", "Pais 3", "Activa");
+        Ruta ruta2 = new Ruta(this.aeropuerto.getPais(), "Pais 4", "Pais 2", "Disponible");
         
         //agregar rutas
         

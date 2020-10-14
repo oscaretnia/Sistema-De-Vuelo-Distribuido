@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pais1.servidor;
+package pais2.servidor;
 
-import common.Aeropuerto;
-import common.Avion;
 import common.Ruta;
+import common.Avion;
+import common.Aeropuerto;
 import common.SistemaVuelo;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -40,13 +40,11 @@ public class SistemaVueloImpl extends UnicastRemoteObject implements SistemaVuel
     public List<Ruta> obtenerRutas() throws RemoteException {
         return db.obtenerRutas();
     }   
-
+    
     @Override
     public String toString() {
-        return "Sistema 1";
+        return "Sistema 2";
     }
-    
-    
     
     
 }

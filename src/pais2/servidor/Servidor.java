@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pais1.servidor;
+package pais2.servidor;
 
 import common.SistemaVuelo;
 import java.rmi.registry.LocateRegistry;
@@ -19,9 +19,9 @@ public class Servidor {
     public Servidor() {
         try {
             SistemaVuelo sistemavuelo = new SistemaVueloImpl();
-            Registry registro = LocateRegistry.createRegistry(4444);
-            registro.bind("sistemaPais1", sistemavuelo);
-            System.out.println("Servidor del pais 1 corriendo en puerto 4444");
+            Registry registro = LocateRegistry.createRegistry(4445);
+            registro.bind("sistemaPais2", sistemavuelo);
+            System.out.println("Servidor del pais 2 corriendo en puerto 4445");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -3,11 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pais1.cliente;
+package pais2.cliente;
 
-import common.Aeropuerto;
-import common.Avion;
-import common.Ruta;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -17,6 +14,9 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import common.SistemaVuelo;
+import common.Aeropuerto;
+import common.Avion;
+import common.Ruta;
 
 /**
  *
@@ -47,7 +47,7 @@ public class Executor {
         
         StringBuilder builder = new StringBuilder();
         
-        builder.append("**** Sistema Pais 1 ****\n")
+        builder.append("**** Sistema Pais 2 ****\n")
                .append("**** Menú ****\n")
                .append("1.- Mostrar aeropuertos \n")
                .append("2.- Mostrar aviones \n")
@@ -60,10 +60,10 @@ public class Executor {
     private void conectarServidor() {
         try {
             Registry registro1 = LocateRegistry.getRegistry("localhost", 4444);
-            sisVuelo1 = (SistemaVuelo) registro1.lookup("sistemaPais1");
+            sisVuelo1 = (SistemaVuelo) registro1.lookup("sistemaPais1");  
             
             Registry registro2 = LocateRegistry.getRegistry("localhost", 4445);
-            sisVuelo2 = (SistemaVuelo) registro2.lookup("sistemaPais2");             
+            sisVuelo2 = (SistemaVuelo) registro2.lookup("sistemaPais2");           
         } catch (Exception e) {
             Logger.getLogger(Executor.class.getName()).log(Level.SEVERE, null, e);
         }

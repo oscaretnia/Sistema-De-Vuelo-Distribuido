@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pais1.servidor;
+package common;
 
 import java.io.Serializable;
 
@@ -15,7 +15,7 @@ public class Avion implements Serializable {
     
     private static final long serialVersionUID = 1L;
    
-    private final String pais;
+    private String pais;
     private String origen;
     private String destino;
     private String matricula;
@@ -23,20 +23,20 @@ public class Avion implements Serializable {
     private String fechaVuelo;
 
     public Avion() {
-        this.pais = "Pais 1";
+        
     }
 
-    public Avion( String origen, String destino, String matricula, int cantidadPasajeros, String fechaVuelo) {
+    public Avion(String pais, String origen, String destino, String matricula, int cantidadPasajeros, String fechaVuelo) {
         this.origen = origen;
         this.destino = destino;
         this.matricula = matricula;
         this.cantidadPasajeros = cantidadPasajeros;
         this.fechaVuelo = fechaVuelo;
-        this.pais = "Pais 1";
+        this.pais = pais;
     }
     
     public String getPais() {
-        return origen;
+        return pais;
     }
 
     public String getOrigen() {
