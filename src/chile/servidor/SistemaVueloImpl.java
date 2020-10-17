@@ -40,6 +40,16 @@ public class SistemaVueloImpl extends UnicastRemoteObject implements SistemaVuel
     public List<Ruta> obtenerRutas() throws RemoteException {
         return db.obtenerRutas();
     }   
+    
+    @Override
+    public void insertarAvion(Avion avion) throws RemoteException {
+        db.insertarAvion(avion);
+    }
+
+    @Override
+    public void insertarRuta(Ruta ruta) throws RemoteException {
+        db.insertarRuta(ruta);
+    }
        
     
 }

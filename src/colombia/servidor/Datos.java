@@ -69,10 +69,18 @@ public class Datos {
         return this.aeropuerto.getRutaList();
     }
 
-    public List<Aeropuerto> getAeropuertos() {
+    public List<Aeropuerto> obtenerAeropuertos() {
         List<Aeropuerto> aeropuertos = new ArrayList<>();
         aeropuertos.add(this.aeropuerto);
         return aeropuertos;
     }
-            
+    
+    void insertarAvion(Avion avion) {
+        this.aeropuerto.getAvionList().add(avion);
+    }
+    
+    void insertarRuta(Ruta ruta) {
+        this.aeropuerto.getRutaList().add(ruta);
+    }        
+    
 }

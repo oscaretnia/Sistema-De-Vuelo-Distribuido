@@ -21,7 +21,7 @@ public class Servidor {
             SistemaVuelo sistemavuelo = new SistemaVueloImpl();
             Registry registro = LocateRegistry.createRegistry(4447);
             registro.bind("sistemaPais4", sistemavuelo);
-            System.out.println("Servidor del pais 4 corriendo en puerto 4447");
+            System.out.println("Servidor Sistema Chile corriendo en puerto 4447");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

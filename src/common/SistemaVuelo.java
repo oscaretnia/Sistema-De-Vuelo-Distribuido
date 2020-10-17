@@ -22,4 +22,8 @@ public interface SistemaVuelo extends Remote {
     
     public List<Ruta> obtenerRutas() throws RemoteException;
     
+    void insertarAvion(Avion avion) throws RemoteException;
+    
+    void insertarRuta(Ruta ruta) throws RemoteException;
+    
 }

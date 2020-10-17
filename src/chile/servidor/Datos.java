@@ -74,5 +74,13 @@ public class Datos {
         aeropuertos.add(this.aeropuerto);
         return aeropuertos;
     }
+    
+    void insertarAvion(Avion avion) {
+        this.aeropuerto.getAvionList().add(avion);
+    }
+    
+    void insertarRuta(Ruta ruta) {
+        this.aeropuerto.getRutaList().add(ruta);
+    } 
             
 }

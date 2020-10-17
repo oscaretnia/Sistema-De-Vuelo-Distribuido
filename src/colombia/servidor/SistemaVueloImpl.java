@@ -28,7 +28,7 @@ public class SistemaVueloImpl extends UnicastRemoteObject implements SistemaVuel
     
     @Override
     public List<Aeropuerto> obtenerAeropuertos() throws RemoteException {        
-        return this.db.getAeropuertos();
+        return this.db.obtenerAeropuertos();
     }
     
     @Override
@@ -39,6 +39,16 @@ public class SistemaVueloImpl extends UnicastRemoteObject implements SistemaVuel
     @Override
     public List<Ruta> obtenerRutas() throws RemoteException {
         return db.obtenerRutas();
-    }   
+    }  
+
+    @Override
+    public void insertarAvion(Avion avion) throws RemoteException {
+        db.insertarAvion(avion);
+    }
+
+    @Override
+    public void insertarRuta(Ruta ruta) throws RemoteException {
+        db.insertarRuta(ruta);
+    }
     
 }
