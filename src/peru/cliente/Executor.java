@@ -167,6 +167,8 @@ public class Executor {
                 //Opcion 5
                 case 5:
                     
+                    System.out.print("Ingresa el identificador de la ruta -> ");
+                    int rId = scanner.nextInt();
                     System.out.print("Ingresa el pais -> ");
                     String rPais = scanner.next();
                     System.out.print("Ingresa el origen -> ");
@@ -178,16 +180,34 @@ public class Executor {
                     System.out.println("");
                     System.out.println("");
                     
-                    this.insertarRuta(rPais, rOrigen, rDestino, rEstado);
+                    this.insertarRuta(rId, rPais, rOrigen, rDestino, rEstado);
                                        
                 break;
                 //Fin opcion 5
                 
                 //Opcion 6
                 case 6:
-                    System.exit(0);                    
+                    System.out.print("Ingresa la matricula del avion a eliminar -> ");
+                    String aMat = scanner.next();
+                    this.eliminarAvion(aMat);
+                                        
                 break;
                 //Fin opcion 6
+                
+                //Opcion 7
+                case 7:
+                    System.out.print("Ingresa el identificador de la ruta a eliminar -> ");
+                    int rIden = scanner.nextInt();
+                    this.eliminarRuta(rIden);
+                                        
+                break;
+                //Fin opcion 7
+                
+                //Opcion 8
+                case 8:
+                    System.exit(0);                    
+                break;
+                //Fin opcion 8
                 
             }        
     }
@@ -252,9 +272,33 @@ public class Executor {
         }
     }
     
-    void insertarRuta(String pais, String origen, String destino, String estado) {
+    void insertarRuta(int id, String pais, String origen, String destino, String estado) {
         try {
-            sistemaPeru.insertarRuta(new Ruta(pais, origen, destino, estado));
+            sistemaPeru.insertarRuta(new Ruta(id, pais, origen, destino, estado));
+        } catch (RemoteException ex) {
+            Logger.getLogger(Executor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    void eliminarAvion(String matricula) {
+        try {
+            if (sistemaPeru.eliminarAvion(matricula)) {
+                System.out.println("Avion de matricula " + matricula + " eliminado");
+            } else {
+                System.out.println("El Avion de matricula de " + matricula + " no existe");
+            }
+        } catch (RemoteException ex) {
+            Logger.getLogger(Executor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    void eliminarRuta(int id) {
+        try {
+            if (sistemaPeru.eliminarRuta(id)) {
+                System.out.println("Ruta de identificador " + id + " eliminada");
+            } else {
+                System.out.println("La ruta con el identificador " + id + " no existe");
+            }
         } catch (RemoteException ex) {
             Logger.getLogger(Executor.class.getName()).log(Level.SEVERE, null, ex);
         }

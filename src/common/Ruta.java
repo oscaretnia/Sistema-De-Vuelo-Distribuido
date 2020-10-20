@@ -16,6 +16,7 @@ public class Ruta implements Serializable {
     
     private static final long serialVersionUID = 1L;
 
+    private int id;
     private String pais;
     private String origen;
     private String destino;
@@ -24,11 +25,16 @@ public class Ruta implements Serializable {
     public Ruta() {
     }
 
-    public Ruta(String pais, String origen, String destino, String estado) {
+    public Ruta(int id, String pais, String origen, String destino, String estado) {
+        this.id = id;
         this.origen = origen;
         this.destino = destino;
         this.estado = estado;
         this.pais = pais;
+    }
+    
+    public int getId() {
+        return id;
     }
 
     public String getPais() {

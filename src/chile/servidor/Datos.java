@@ -50,8 +50,8 @@ public class Datos {
         
         //crear rutas
         
-        Ruta ruta1 = new Ruta(this.aeropuerto.getPais(), "Chile", "Argentina", "Activa");
-        Ruta ruta2 = new Ruta(this.aeropuerto.getPais(), "Colombia", "Chile", "Disponible");
+        Ruta ruta1 = new Ruta(5, this.aeropuerto.getPais(), "Chile", "Argentina", "Activa");
+        Ruta ruta2 = new Ruta(6, this.aeropuerto.getPais(), "Colombia", "Chile", "Disponible");
         
         //agregar rutas
         
@@ -82,5 +82,37 @@ public class Datos {
     void insertarRuta(Ruta ruta) {
         this.aeropuerto.getRutaList().add(ruta);
     } 
+    
+    boolean eliminarAvion(String matricula) {
+        return this.aeropuerto.getAvionList().remove(obtenerAvionPorMatricula(matricula));
+    }
+    
+    Avion obtenerAvionPorMatricula(String matricula) {
+        
+        for (Avion avion: this.obtenerAviones()) {
+            if (avion.getMatricula() == null ? matricula == null : avion.getMatricula().equals(matricula)) {
+                return avion;
+            }
+        }
+        
+        return null;
+        
+    }
+    
+    boolean eliminarRuta(int id) {
+        return this.aeropuerto.getRutaList().remove(obtenerRutaPorId(id));
+    }
+    
+    Ruta obtenerRutaPorId(int id) {
+        
+        for (Ruta ruta: this.obtenerRutas()) {
+            if (ruta.getId() == id) {
+                return ruta;
+            }
+        }
+        
+        return null;
+        
+    }
             
 }

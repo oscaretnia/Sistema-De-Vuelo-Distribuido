@@ -26,4 +26,8 @@ public interface SistemaVuelo extends Remote {
     
     void insertarRuta(Ruta ruta) throws RemoteException;
     
+    boolean eliminarRuta(int id) throws RemoteException;
+    
+    boolean eliminarAvion(String matricula) throws RemoteException;
+    
 }
