@@ -57,7 +57,9 @@ public class Executor {
                .append("3.- Mostrar rutas \n")
                .append("4.- Insertar nuevo avion \n")
                .append("5.- Insertar nueva ruta \n")
-               .append("6.- SALIR \n");    
+               .append("6.- Eliminar avion \n")
+               .append("7.- Eliminar ruta \n")
+               .append("8.- SALIR \n");     
         
         return builder.toString();
     }
